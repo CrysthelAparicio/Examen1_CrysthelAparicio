@@ -4,10 +4,10 @@
 
 using namespace std;
 
-char enteroACaracter(int);
+char intChar(int);
 void iniciarMatriz(Pieza**);
 int* obtenerTotales(Pieza**);
-int caracterAEntero(char);
+int charInt(char);
 void imprimirTab(Pieza**);
 
 
@@ -29,20 +29,23 @@ int main(int argc, char const *argv[]){
 	char jug1[100], jug2[100];
 	do {
 		move(20, 60);
+		
 		printw("%s%d","Ingrese el nombre del jugador ", turnoJugada + 1);
 		move(21, 60);
 		addstr("                               ");
 		move(21, 60);
+
+		int cont = 0;
 		char nombre[100];
-		int contador = 0;
+	
 		noecho();
-		char caracterN = getch();
-		while(caracterN != '\n'){
+		char charN = getch();
+		while(charN != '\n'){
 			noecho();
-				addch(caracterN);
-				nombre[contador] = caracterN;
-				contador++;
-			caracterN = getch();
+				addch(charN);
+				nombre[cont] = charN;
+				cont++;
+			charN = getch();
 		}
 		if (!turnoJugada) {
 			strcpy(jug1, nombre);
@@ -101,8 +104,8 @@ int main(int argc, char const *argv[]){
 				contadorTeclas++;
 			caracter = getch();
 		}
-		int fila = caracterAEntero(input[0]);
-		int nuevaFila = caracterAEntero(input[3]);
+		int fila = charInt(input[0]);
+		int nuevaFila = charInt(input[3]);
 		if ((matriz[(int)(input[1] - '0')][fila].esNegra() && !turnoJugada) || (!matriz[(int)(input[1] - '0')][fila].esNegra() && turnoJugada)) {
 			attrset (COLOR_PAIR(3));
 			move(24, 70);
@@ -146,7 +149,7 @@ void imprimirTab(Pieza** matriz){
 			int x = COLUMNA * 5;
 			if (FILA == 0) {
 				move(FILA * 5, COLUMNA * 7 + 7);
-				printw("%c",enteroACaracter(COLUMNA));
+				printw("%c",intChar(COLUMNA));
 			}
 			for(int i = 0; i < 5; i++){
 				move(FILA * 5 + i + 2, COLUMNA * 7 + 5);
@@ -188,8 +191,7 @@ int* obtenerTotales(Pieza** piezas) {
 	return totales;
 }
 
-
-int caracterAEntero(char x){
+int charInt(char x){
         char abc[9] = "abcdefgh";
         for(int LETRA = 0; LETRA < 8; LETRA++){
                 if(abc[LETRA] == x){
@@ -198,7 +200,7 @@ int caracterAEntero(char x){
         }
         return -1;
 }
-char enteroACaracter(int numero){
+char intChar(int numero){
         char abc[9] = "abcdefgh";
         return abc[numero];
 }
