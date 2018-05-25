@@ -1,4 +1,6 @@
-#pragma once
+#ifndef PIEZA_H
+#define PIEZA_H
+
 #include <string>
 
 using std::string;
@@ -19,6 +21,7 @@ public:
 	int getY();
 	void setX(int);
 	void setY(int);
-	bool mover(int,int,Pieza**&);
+	bool movimiento(int,int,Pieza**&);
 };
 
+#endif

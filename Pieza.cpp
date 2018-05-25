@@ -47,7 +47,7 @@ void Pieza::setY(int y){
 	this->y=y;
 }
 
-bool Pieza::mover(int x,int y,Pieza** &matriz){
+bool Pieza::movimiento(int x,int y,Pieza** &matriz){
 	// return matriz[y][x].estaViva();
  	if(!Negra&&!General){
  		if(x>=8||y>=8||x<0||y<0){
@@ -107,4 +107,3 @@ void Pieza::CambiarColor(bool negra){
 	this->Negra=negra;
 
 }
-
