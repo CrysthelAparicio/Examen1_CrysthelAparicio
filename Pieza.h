@@ -12,16 +12,22 @@ private:
 public:
 	Pieza();
 	Pieza(int,int,bool);
+
 	bool esNegra();
 	bool esGeneral();
 	bool estaViva();
+	bool movimiento(int,int,Pieza**&);
+	
 	void CambiarColor(bool);
 	void setViva(bool);
+	void setX(int);
+        void setY(int);
+
+	
 	int getX();
 	int getY();
-	void setX(int);
-	void setY(int);
-	bool movimiento(int,int,Pieza**&);
+
+
 };
 
 #endif

@@ -122,6 +122,7 @@ int main(int argc, char const *argv[]){
 		imprimirTab(matriz);
 		refresh();
 	}while(true);
+	endwin();
 	return 0;
 }
 
