@@ -7,15 +7,16 @@ using std::string;
 
 class Pieza{
 private:
+        //Marine es la pieza negra, la distingue asi por el cambio de movimientos que utiliza, pero no funciono!!!!
 	int x,y;
 	bool Negra, General, viva;
 public:
 	Pieza();
 	Pieza(int,int,bool);
 
-	bool esNegra();
 	bool esGeneral();
 	bool estaViva();
+	bool esNegra();
 	bool movimiento(int,int,Pieza**&);
 	
 	void CambiarColor(bool);

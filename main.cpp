@@ -1,8 +1,26 @@
 #include <string.h>
 #include "Pieza.h"
 #include <ncurses.h>
+#define T 8
 
 using namespace std;
+
+   char tablero[T][T];
+   char blanco=178; 
+   char negro=177;
+   int i, j;
+   int z; 
+   int turno=1;
+   int direccion ;
+   int error ; 
+   int contador=1; 
+   int fichao=12;
+   int fichax=12;
+   int terminar=1;
+   int contador_fichas_x= 7;
+   int contador_fichas_o= 7;
+   int x,y ;
+
 
 char intChar(int);
 void iniciarMatriz(Pieza**);
@@ -122,7 +140,6 @@ int main(int argc, char const *argv[]){
 		imprimirTab(matriz);
 		refresh();
 	}while(true);
-	endwin();
 	return 0;
 }
 
@@ -205,4 +222,25 @@ char intChar(int numero){
         char abc[9] = "abcdefgh";
         return abc[numero];
 }
+
+void rellenar()
+{
+  for(i=0;i<T;i++)
+  {
+  for(j=0;j<T;j++)
+  {
+
+ if(i<=2&&((j+i)%2==0))
+ {tablero[i][j] = 'O' ;
+ } 
+
+  else if (i>=5&&((j+i)%2==0) ){
+ tablero[i][j] = 'X' ;
+                                }
+ else {
+ tablero[i][j] = ' ' ;}
+       }
+   }
+
+} 
 
