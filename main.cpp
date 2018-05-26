@@ -1,10 +1,11 @@
 #include <string.h>
 #include "Pieza.h"
 #include <ncurses.h>
-#define T 8
+//#define T 8
 
 using namespace std;
 
+/*
    char tablero[T][T];
    char blanco=178; 
    char negro=177;
@@ -20,7 +21,7 @@ using namespace std;
    int contador_fichas_x= 7;
    int contador_fichas_o= 7;
    int x,y ;
-
+*/
 
 char intChar(int);
 void iniciarMatriz(Pieza**);
@@ -223,6 +224,7 @@ char intChar(int numero){
         return abc[numero];
 }
 
+/*
 void rellenar()
 {
   for(i=0;i<T;i++)
@@ -243,4 +245,4 @@ void rellenar()
    }
 
 } 
-
+*/
